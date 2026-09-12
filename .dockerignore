@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.git/
+.venv/
+venv/
+env/
+
+inference/output/
+
+data/
+training/
+evaluation/
