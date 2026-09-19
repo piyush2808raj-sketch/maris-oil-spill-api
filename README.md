@@ -1,4 +1,4 @@
-# MARIS — AI-Based Oil Spill Detection AP
+# MARIS — AI-Based Oil Spill Detection API
 
 MARIS (Maritime AI for Remote-sensing Intelligence System) is an AI-powered API for detecting and segmenting oil spills in satellite imagery using deep learning.
 
@@ -24,7 +24,7 @@ The system uses Sentinel-1 SAR imagery and a two-stage AI pipeline:
 
 MARIS uses a two-stage deep learning pipeline to detect and analyze possible oil spills.
 
-```text
+
 Satellite SAR Image
         ↓
 Image Preprocessing
@@ -53,7 +53,7 @@ SAR is particularly useful for maritime monitoring because it can capture images
 
 > **Note:** The current MARIS demo does not use a separately provided VV/VH polarization dataset.
 
-## 🤖 **Deep Learning Models**
+## 🤖 Deep Learning Models
 
 MARIS uses two separate **TensorFlow/Keras deep learning models** for oil spill analysis:
 
@@ -85,7 +85,7 @@ The two models work sequentially:
 
 If the classification model predicts **No Oil Spill**, the segmentation stage is skipped.
 
-## 📊 **Datasets & Attribution**
+## 📊 Datasets & Attribution
 
 MARIS uses publicly available **SAR oil spill datasets** for training and evaluation.
 
@@ -115,9 +115,8 @@ Used for **oil spill segmentation** with pixel-level masks.
 
 The datasets are publicly available and are used for **research and educational purposes**. Dataset ownership and licensing remain with the respective original creators and sources.
 
-## 📁 **Project Structure**
+## 📁 Project Structure
 
-```text
 MARIS/
 │
 ├── ai_models/
@@ -148,7 +147,7 @@ MARIS/
 ├── requirements.txt
 └── README.md
 
-## 🛠️ **Tech Stack**
+## 🛠️ Tech Stack
 
 ### 🔹 **Machine Learning & Deep Learning**
 - **Python**
@@ -172,7 +171,7 @@ MARIS/
 - **Jupyter Notebook** — Training experiments
 - **Git & GitHub** — Version control and project management
 
-## ☁️ **Deployment**
+## ☁️ Deployment
 
 The MARIS API is containerized using **Docker** and deployed on **Render** as a cloud-based FastAPI service.
 
@@ -190,7 +189,7 @@ The deployed API provides endpoints for submitting SAR images and receiving oil 
 - **Swagger Documentation:** `https://maris-oil-spill-api.onrender.com/docs`
 - **Health Check:** `https://maris-oil-spill-api.onrender.com/health`
 
-## 🔌 **API Endpoints**
+## 🔌 API Endpoints
 
 The MARIS API provides endpoints for health monitoring, oil spill prediction, and interactive API documentation.
 
@@ -208,7 +207,7 @@ The `/predict` endpoint follows this pipeline:
 
 If no oil spill is detected during classification, the segmentation stage is skipped.
 
-## 📚 **API Documentation**
+## 📚 API Documentation
 
 MARIS provides interactive API documentation through **Swagger UI**, allowing users to test the API endpoints directly from their browser.
 
@@ -226,7 +225,7 @@ From the Swagger interface, users can:
 - Test the `/health` endpoint
 - Explore the available API schemas
 
-## 📦 **Example API Request**
+## 📦 Example API Request
 
 The `/predict` endpoint accepts a SAR satellite image as a file upload.
 
@@ -236,7 +235,7 @@ Users can upload an image through the interactive **Swagger UI**:
 
 The uploaded image is processed by the MARIS inference pipeline, which performs classification and, when an oil spill is detected, segmentation.
 
-## 📦 **Example API Response**
+## 📦 Example API Response
 
 The `/predict` endpoint returns the oil spill analysis results along with the generated **segmentation mask** and **overlay image**.
 
@@ -279,7 +278,7 @@ The API response contains:
   }
 }
 
-## 🖼️ **Outputs**
+## 🖼️ Outputs
 
 MARIS produces both **visual and numerical outputs** from the uploaded SAR image.
 
@@ -299,7 +298,7 @@ MARIS produces both **visual and numerical outputs** from the uploaded SAR image
 - **Bounding Box** — Coordinates surrounding the detected spill
 - **Perimeter** — Perimeter of the detected spill region
 
-## 🎯 **Project Goal**
+## 🎯 Project Goal
 
 The goal of MARIS is to provide an AI-based system for **automated oil spill detection and segmentation from SAR satellite imagery**.
 
@@ -313,7 +312,7 @@ The API is designed to transform a satellite image into actionable information b
 
 This AI detection module forms the **DETECT** stage of the broader MARIS concept for maritime oil spill monitoring.
 
-## 🔮 **Future Improvements**
+## 🔮 Future Improvements
 
 - Improve model performance with larger and more diverse SAR datasets.
 - Support additional SAR satellite sources and polarization information.
@@ -325,7 +324,7 @@ This AI detection module forms the **DETECT** stage of the broader MARIS concept
 - Add uncertainty estimation to the detection and segmentation results.
 - Develop a more interactive visualization interface for detected spills.
 
-## 📄 **License**
+## 📄 License
 
 This project is intended for **research and educational purposes**.
 
