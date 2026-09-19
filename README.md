@@ -187,9 +187,9 @@ The MARIS API is containerized using **Docker** and deployed on **Render** as a 
 
 The deployed API provides endpoints for submitting SAR images and receiving oil spill detection and segmentation results.
 
-- **API:** [Maris API]https://maris-oil-spill-api.onrender.com
-- **Swagger Documentation:** [Open Swagger UI]https://maris-oil-spill-api.onrender.com/docs
-- **Health Check:** [API Health]https://maris-oil-spill-api.onrender.com/health
+- **API:** [Maris API](https://maris-oil-spill-api.onrender.com)
+- **Swagger Documentation:** [Open Swagger UI](https://maris-oil-spill-api.onrender.com/docs)
+- **Health Check:** [API Health](https://maris-oil-spill-api.onrender.com/health)
 
 ## 🔌 API Endpoints
 
