@@ -250,35 +250,36 @@ The API response contains:
 - **Overlay Image** — Predicted spill region overlaid on the original SAR image.
 
 ### 🔹 **Example Response**
-
+```text
 {
-  "job_id": "703a83c3",
-  "result": {
-    "oil_probability": 0.6650543808937073,
-    "spill_area": {
-      "oil_pixels": 9290,
-      "area_percentage": 14.1754150390625
+    "job_id": "4b20e979",
+    "result": {
+        "oil_probability": 0.6650543808937073,
+        "spill_area": {
+            "oil_pixels": 9290,
+            "area_percentage": 14.1754150390625
+        },
+        "centroid": {
+            "x": 81.19913885898816,
+            "y": 168.0832077502691
+        },
+        "bounding_box": {
+            "x_min": 0,
+            "y_min": 38,
+            "x_max": 168,
+            "y_max": 255
+        },
+        "perimeter": 890.0,
+        "job_id": "4b20e979",
+        "result": "OIL_DETECTED"
     },
-    "centroid": {
-      "x": 81.19913885898816,
-      "y": 168.0832077502691
-    },
-    "bounding_box": {
-      "x_min": 0,
-      "y_min": 38,
-      "x_max": 168,
-      "y_max": 255
-    },
-    "perimeter": 890,
-    "job_id": "703a83c3",
-    "result": "OIL_DETECTED"
-  },
-  "files": {
-    "mask": "https://maris-oil-spill-api.onrender.com/result/703a83c3/predicted_mask.png",
-    "overlay": "https://maris-oil-spill-api.onrender.com/result/703a83c3/overlay.png",
-    "json": "https://maris-oil-spill-api.onrender.com/result/703a83c3/result.json"
-  }
+    "files": {
+        "mask": "https://maris-oil-spill-api.onrender.com/result/4b20e979/predicted_mask.png",
+        "overlay": "https://maris-oil-spill-api.onrender.com/result/4b20e979/overlay.png",
+        "json": "https://maris-oil-spill-api.onrender.com/result/4b20e979/result.json"
+    }
 }
+```
 
 ## 🖼️ Outputs
 
