@@ -187,9 +187,9 @@ The MARIS API is containerized using **Docker** and deployed on **Render** as a 
 
 The deployed API provides endpoints for submitting SAR images and receiving oil spill detection and segmentation results.
 
-- **API:** `https://maris-oil-spill-api.onrender.com`
-- **Swagger Documentation:** `https://maris-oil-spill-api.onrender.com/docs`
-- **Health Check:** `https://maris-oil-spill-api.onrender.com/health`
+- **API:** [Maris API]https://maris-oil-spill-api.onrender.com
+- **Swagger Documentation:** [Open Swagger UI]https://maris-oil-spill-api.onrender.com/docs
+- **Health Check:** [API Health]https://maris-oil-spill-api.onrender.com/health
 
 ## 🔌 API Endpoints
 
@@ -217,7 +217,7 @@ MARIS provides interactive API documentation through **Swagger UI**, allowing us
 
 Open:
 
-`https://maris-oil-spill-api.onrender.com/docs`
+https://maris-oil-spill-api.onrender.com/docs
 
 From the Swagger interface, users can:
 
@@ -233,52 +233,49 @@ The `/predict` endpoint accepts a SAR satellite image as a file upload.
 
 Users can upload an image through the interactive **Swagger UI**:
 
-`https://maris-oil-spill-api.onrender.com/docs`
+https://maris-oil-spill-api.onrender.com/docs
 
 The uploaded image is processed by the MARIS inference pipeline, which performs classification and, when an oil spill is detected, segmentation.
 
-## 📦 Example API Response
 
-The `/predict` endpoint returns the oil spill analysis results along with the generated **segmentation mask** and **overlay image**.
+## 📦 **Example API Response**
 
-### 🔹 **Response**
+After uploading a SAR image to the `/predict` endpoint, MARIS returns a JSON response containing the oil spill prediction, confidence, spill measurements, and links to the generated output files.
 
-The API response contains:
+### 🔹 **JSON Response**
 
-- **JSON results** — Oil spill prediction, confidence, and extracted spill measurements.
-- **Segmentation Mask** — Pixel-level mask of the detected oil spill.
-- **Overlay Image** — Predicted spill region overlaid on the original SAR image.
-
-### 🔹 **Example Response**
-
+```json
 {
-    "job_id": "4b20e979",
-    "result": {
-        "oil_probability": 0.6650543808937073,
-        "spill_area": {
-            "oil_pixels": 9290,
-            "area_percentage": 14.1754150390625
-        },
-        "centroid": {
-            "x": 81.19913885898816,
-            "y": 168.0832077502691
-        },
-        "bounding_box": {
-            "x_min": 0,
-            "y_min": 38,
-            "x_max": 168,
-            "y_max": 255
-        },
-        "perimeter": 890.0,
-        "job_id": "4b20e979",
-        "result": "OIL_DETECTED"
+  "job_id": "703a83c3",
+  "result": {
+    "oil_probability": 0.6650543808937073,
+    "spill_area": {
+      "oil_pixels": 9290,
+      "area_percentage": 14.1754150390625
     },
-    "files": {
-        "mask": "https://maris-oil-spill-api.onrender.com/result/4b20e979/predicted_mask.png",
-        "overlay": "https://maris-oil-spill-api.onrender.com/result/4b20e979/overlay.png",
-        "json": "https://maris-oil-spill-api.onrender.com/result/4b20e979/result.json"
-    }
+    "centroid": {
+      "x": 81.19,
+      "y": 168.08
+    },
+    "bounding_box": {
+      "x_min": 0,
+      "y_min": 38,
+      "x_max": 168,
+      "y_max": 255
+    },
+    "perimeter": 890,
+    "result": "OIL_DETECTED"
+  }
 }
+```
+
+### 🔹 **Generated Outputs**
+
+The API also provides links to the generated results:
+
+- **Predicted Mask** — Shows the pixel-level region identified as oil spill.
+- **Overlay** — Shows the predicted oil spill region over the original SAR image.
+- **JSON Result** — Provides the complete numerical prediction and spill measurements in JSON format.
 
 
 ## 🖼️ Outputs
