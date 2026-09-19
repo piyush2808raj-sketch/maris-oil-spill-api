@@ -24,7 +24,7 @@ The system uses Sentinel-1 SAR imagery and a two-stage AI pipeline:
 
 MARIS uses a two-stage deep learning pipeline to detect and analyze possible oil spills.
 
-
+```text
 Satellite SAR Image
         ↓
 Image Preprocessing
@@ -42,6 +42,7 @@ No Spill   Segmentation
        Spill Analysis
               ↓
         JSON Response
+```
 
 ## 🛰️ Satellite Data
 
