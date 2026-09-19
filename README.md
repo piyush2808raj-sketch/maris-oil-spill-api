@@ -117,6 +117,7 @@ The datasets are publicly available and are used for **research and educational 
 
 ## 📁 Project Structure
 
+```text
 MARIS/
 │
 ├── ai_models/
@@ -146,6 +147,7 @@ MARIS/
 ├── Dockerfile
 ├── requirements.txt
 └── README.md
+```
 
 ## 🛠️ Tech Stack
 
