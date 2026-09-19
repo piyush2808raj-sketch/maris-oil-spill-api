@@ -250,7 +250,7 @@ The API response contains:
 - **Overlay Image** — Predicted spill region overlaid on the original SAR image.
 
 ### 🔹 **Example Response**
-```text
+
 {
     "job_id": "4b20e979",
     "result": {
@@ -279,7 +279,7 @@ The API response contains:
         "json": "https://maris-oil-spill-api.onrender.com/result/4b20e979/result.json"
     }
 }
-```
+
 
 ## 🖼️ Outputs
 
